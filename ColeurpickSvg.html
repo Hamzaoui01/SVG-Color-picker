@@ -15,7 +15,7 @@
         rect.setAttribute('width',15);
         rect.setAttribute('height',0.8);
         rect.setAttribute('fill','hsl('+i+', 98%, 50%)');
-        rect.setAttribute('onclick','f1('+i+')');
+        rect.setAttribute('onclick','f1('+i+',this,'+i+')');
         svg.appendChild(rect);       
     }
     document.body.appendChild(svg);
@@ -33,7 +33,19 @@
         }     
     }
     document.body.appendChild(svg);
-function f1(color){
+    var pr=0,ii=0;
+function f1(color,a,i){
+    if(pr!=0){
+     pr.setAttribute('fill','hsl('+ii+', 98%, 50%)');   
+        pr.setAttribute('width',15);
+        pr.setAttribute('height',0.8);
+    }
+    a.setAttribute('fill','hsl(0,0%,0%)');
+         a.setAttribute('width',30);
+        a.setAttribute('height',6);
+    pr=a;
+    ii=i;    
+    
     var i;
     for(i=0;i<=100;i++){
         for(j=0;j<=100;j++){
@@ -41,7 +53,6 @@ function f1(color){
         rect.setAttribute('fill','hsl('+color+', '+i+'%, '+j+'%)');
         }     
     }
-
 }
 </script>
 <button onclick="f1(3)">click</button>
