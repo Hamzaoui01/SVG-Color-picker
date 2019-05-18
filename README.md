@@ -2,4 +2,4 @@
 a simple color picker using svg 
 
 ## Screenshot
-![](https://zupimages.net/up/19/20/k8p5.png)
+![](https://zupimages.net/up/19/20/49io.png)
